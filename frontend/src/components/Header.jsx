@@ -9,7 +9,7 @@ export function Header(){
         const formData = new FormData();
         formData.append('file', acceptedFiles[0]);
 
-        await axios.post('http://localhost:8000/upload_pdf/', formData, {
+        await axios.post('https://querypdf.onrender.com/upload_pdf/', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },

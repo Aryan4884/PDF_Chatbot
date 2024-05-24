@@ -17,7 +17,7 @@ export function ChatBox() {
         setUserQuestion(''); // Clear the input field
 
         try {
-            const response = await axios.post('http://localhost:8000/ask_question/', {
+            const response = await axios.post('https://querypdf.onrender.com/ask_question/', {
                 user_question: userQuestion,
             });
 
