@@ -17,12 +17,19 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+# Define your updated CORS settings
+origins = [
+    "http://localhost:5173",  # Add or modify origins as needed
+    "https://query-pdf-swart.vercel.app",  # Example: Add other origins
+]
+
+# Update the CORS middleware with your new settings
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Adjust this if your frontend is hosted elsewhere
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allows all HTTP methods
+    allow_headers=["*"],  # Allows all headers
 )
 
 question_answer_history = []
