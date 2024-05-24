@@ -4,17 +4,16 @@ import axios from 'axios';
 export function ChatBox() {
     const [messages, setMessages] = useState([]);
     const [userQuestion, setUserQuestion] = useState('');
-    const [loading, setLoading] = useState(false); // New state to track loading status
+    const [loading, setLoading] = useState(false);
 
     const handleQuestionSubmit = async (e) => {
         e.preventDefault();
         if (!userQuestion) return;
 
-        // Add user's question to the chat immediately
         setMessages([...messages, { type: 'user', text: userQuestion }]);
-        setLoading(true); // Set loading state to true
+        setLoading(true); 
 
-        setUserQuestion(''); // Clear the input field
+        setUserQuestion('');
 
         try {
             const response = await axios.post('https://querypdf.onrender.com/ask_question/', {
@@ -31,7 +30,7 @@ export function ChatBox() {
                 { type: 'bot', text: 'Error fetching response. Please try again.' },
             ]);
         } finally {
-            setLoading(false); // Set loading state to false after response is received
+            setLoading(false);
         }
     };
     return (

@@ -1,6 +1,3 @@
-// src/Chat.js
-
-import './App.css'; // You can create a simple CSS file for styling
 import { ChatBox } from './components/ChatBox';
 import { Header } from './components/Header';
 
