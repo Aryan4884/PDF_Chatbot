@@ -9,21 +9,21 @@ from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 import google.generativeai as genai
 from pydantic import BaseModel
+import shutil
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
 # Define your updated CORS settings
 origins = [
-    "http://localhost:5173",  # Add or modify origins as needed
-    "https://query-pdf-swart.vercel.app",  # Example: Add other origins
+    "http://localhost:5173", 
+    "https://query-pdf-swart.vercel.app",
 ]
 
-# Update the CORS middleware with your new settings
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -75,7 +75,6 @@ def get_conversational_chain():
 
     return chain
 
-
 @app.post("/upload_pdf/")
 async def upload_pdf(file: UploadFile = File(...)):
     # Define the target directory
@@ -84,6 +83,17 @@ async def upload_pdf(file: UploadFile = File(...)):
     # Create the directory if it doesn't exist
     if not os.path.exists(upload_directory):
         os.makedirs(upload_directory)
+    else:
+        # Delete any existing files in the directory
+        for filename in os.listdir(upload_directory):
+            file_path = os.path.join(upload_directory, filename)
+            try:
+                if os.path.isfile(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print(f"Error deleting file {file_path}: {e}")
 
     # Save the uploaded PDF file
     file_location = os.path.join(upload_directory, file.filename)
@@ -102,6 +112,7 @@ async def upload_pdf(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=f"Error processing PDF: {e}")
 
     return {"info": f"File '{file.filename}' uploaded and processed successfully"}
+
 
 
 class QuestionInput(BaseModel):
