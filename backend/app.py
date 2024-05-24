@@ -47,7 +47,7 @@ def get_pdf_text(pdf_path):
 
 
 def get_text_chunks(text):
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=1000)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=20000, chunk_overlap=5000)
     chunks = text_splitter.split_text(text)
     return chunks
 
@@ -130,11 +130,16 @@ async def ask_question(question_input: QuestionInput):
         print(f"Error loading FAISS index: {e}")
         return
 
+    # Retrieve document objects from the FAISS index
     docs = new_db.similarity_search(user_question)
 
     chain = get_conversational_chain()
 
-    response = chain({"input_documents": docs, "question": user_question}, return_only_outputs=True)
+    # Join all text chunks to create the full context
+    full_text = " ".join([str(doc) for doc in docs])
+
+    # Pass the input_documents key to the chain along with the context and question
+    response = chain({"input_documents": docs, "context": full_text, "question": user_question}, return_only_outputs=True)
 
     # Append the new question-answer pair to the history
     question_answer_history.append({"question": user_question, "answer": response["output_text"]})
