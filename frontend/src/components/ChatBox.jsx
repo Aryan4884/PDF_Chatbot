@@ -45,9 +45,9 @@ export function ChatBox() {
                 ))}
                 {loading && <div className="flex justify-start"><div className="p-2 bg-gray-300 rounded-lg">Loading...</div></div>}
             </div>
-            <form onSubmit={handleQuestionSubmit} className="flex items-center mb-4 bg-white rounded-lg shadow-md fixed bottom-4 left-1/2 transform -translate-x-1/2 w-3/4">
+            <form onSubmit={handleQuestionSubmit} className="flex items-center bg-white rounded-lg shadow fixed bottom-8 left-1/2 transform -translate-x-1/2 w-3/4">
                 <input
-                    className="flex-1 p-2 mr-2 border border-gray-300 rounded-md shadow-sm"
+                    className="flex-1 p-2 mr-2 rounded-md shadow-sm"
                     type="text"
                     value={userQuestion}
                     onChange={(e) => setUserQuestion(e.target.value)}

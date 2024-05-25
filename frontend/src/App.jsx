@@ -1,11 +1,14 @@
 import './App.css'
-import Chat from './Chat'
+import { Header } from './components/Header';
+import { ChatBox } from './components/ChatBox';
 
 function App() {
   return (
-      <div className="App">
-          <Chat />
-      </div>
+    <div className="App flex flex-col min-h-screen items-center">
+    <Header />
+    <ChatBox />
+
+</div>
   );
 }
 
