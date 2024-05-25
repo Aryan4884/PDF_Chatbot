@@ -5,15 +5,36 @@ Welcome to the QueryPDF! This project aims to create a full-stack application th
 ## Setup Instructions
 
 1. **Backend Setup**
-   - Clone the repository: `git clone <repository_url>`
-   - Navigate to the backend directory: `cd backend`
-   - Install dependencies: `pip install -r requirements.txt`
-   - Start the FastAPI server: `uvicorn app:app --reload`
+   - Clone the repository:
+     ```
+     git clone https://github.com/Jai0401/QueryPDF.git
+     ```
+   - Navigate to the backend directory:
+     ```
+     cd backend
+     ```
+   - Install dependencies:
+     ```
+     pip install -r requirements.txt
+     ```
+   - Start the FastAPI server:
+     ```
+     uvicorn app:app --reload
+     ```
 
 2. **Frontend Setup**
-   - Navigate to the frontend directory: `cd frontend`
-   - Install dependencies: `npm install`
-   - Start the React development server: `npm run dev`
+   - Navigate to the frontend directory:
+     ```
+     cd frontend
+     ```
+   - Install dependencies:
+     ```
+     npm install
+     ```
+   - Start the React development server:
+     ```
+     npm run dev
+     ```
 
 ## API Documentation
 
