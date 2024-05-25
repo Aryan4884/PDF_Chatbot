@@ -48,7 +48,7 @@ export function Header() {
             </div>
             <div {...getRootProps()} className="flex items-center">
                 <input {...getInputProps()} aria-label="Upload PDF" className="hidden" />
-                <div className={`w-32 h-10 flex items-center justify-center ${uploadedFileName ? 'bg-green-200' : 'bg-transparent'} text-gray-700 font-semibold`}>
+                <div className={`w-34 h-10 flex items-center justify-center ${uploadedFileName ? 'bg-green-200' : 'bg-transparent'} text-gray-700 font-semibold mr-4 rounded-md p-2`}>
                     {uploadedFileName && <span className="truncate">{uploadedFileName}</span>}
                 </div>
                 <Button>{loading ? 'Uploading...' : 'Upload PDF'}</Button>

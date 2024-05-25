@@ -41,11 +41,11 @@ export function ChatBox() {
             <div className="flex-1 overflow-y-auto mt-20">
                 {messages.map((message, index) => (
                     <div key={index} className={`flex items-start mb-2 ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
-                        {message.type === 'bot' && <FontAwesomeIcon icon={faRobot} className="text-2xl mr-2" />}
+                        {message.type === 'bot' && <FontAwesomeIcon icon={faRobot} className="text-2xl mr-2 pt-1" />}
                         <div className={`p-2 rounded-lg ${message.type === 'user' ? 'bg-blue-500 text-white' : 'bg-green-500 text-white'} w-3/4 sm:w-1/2 lg:w-3/4`}>
                             {message.text}
                         </div>
-                        {message.type === 'user' && <FontAwesomeIcon icon={faUser} className="text-2xl ml-2" />}
+                        {message.type === 'user' && <FontAwesomeIcon icon={faUser} className="text-2xl ml-2 pt-1" />}
                     </div>
                 ))}
                 {loading && <div className="flex justify-start"><div className="p-2 bg-gray-300 rounded-lg">Loading...</div></div>}
