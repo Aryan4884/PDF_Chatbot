@@ -19,20 +19,26 @@ Welcome to the QueryPDF! This project aims to create a full-stack application th
 
 - **PDF Upload Endpoint**
   - POST `/upload_pdf`
-  - Request Body: `{ "file": <PDF file> }`
-  - Response: `{ "message": "PDF uploaded successfully" }`
+  - Request Body: Form Data
+    - `file`: PDF file
+  - Response: `{
+    "info": "File <file-name> uploaded and processed successfully"
+}`
 
 - **Question-Answer Endpoint**
   - POST `/ask-question`
-  - Request Body: `{ "document_id": <document_id>, "question": <question_text> }`
-  - Response: `{ "answer": <answer_text> }`
+  - Request Body: `{ "user_question": <question_text> }`
+  - Response: `{
+    "question": "<question_text>",
+    "answer": "<answer_text>"
+}`
 
 ## Application Architecture
 
 - **Backend (FastAPI)**
   - Handles PDF uploads, question processing, and answer generation.
   - Utilizes LangChain for natural language processing.
-  - Stores document metadata in the database (SQLite/PostgreSQL).
+  - [Backend Architecture and Workflow Overview](backend/README.md#Backend-Architecture-and-Workflow-Overview)
 
 - **Frontend (React.js)**
   - Provides interfaces for PDF upload and asking questions.
