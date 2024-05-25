@@ -10,7 +10,7 @@ The backend system is designed to handle PDF uploads, process user questions, ge
    - Text is segmented into chunks using LangChain's `RecursiveCharacterTextSplitter` for efficient storage and analysis.
 
 3. **Embeddings and Similarity Search:**
-   - `GoogleGenerativeAIEmbedding`s from LangChain is used to create vector embeddings from text chunks.
+   - `GoogleGenerativeAIEmbeddings` from LangChain is used to create vector embeddings from text chunks.
    - These embeddings are stored and indexed using `FAISS` (Facebook AI Similarity Search) for efficient similarity search operations.
 
 4. **Question Answering Chain:**
