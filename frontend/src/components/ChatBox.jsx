@@ -50,7 +50,7 @@ export function ChatBox() {
                 ))}
                 {loading && <div className="flex justify-start"><div className="p-2 bg-gray-300 rounded-lg">Loading...</div></div>}
             </div>
-            <form onSubmit={handleQuestionSubmit} className="flex items-center bg-white rounded-lg shadow-md mb-8">
+            <form onSubmit={handleQuestionSubmit} className="flex items-center bg-white rounded-lg shadow-md">
                 <input
                     className="flex-1 p-2 mr-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     type="text"
