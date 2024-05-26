@@ -17,6 +17,7 @@ Welcome to the QueryPDF! This project aims to create a full-stack application th
      ```
      pip install -r requirements.txt
      ```
+   - Create a new file named .env in the backend directory
    - Start the FastAPI server:
      ```
      uvicorn app:app --reload
@@ -47,7 +48,7 @@ Welcome to the QueryPDF! This project aims to create a full-stack application th
 }`
 
 - **Question-Answer Endpoint**
-  - POST `/ask-question`
+  - POST `/ask_question`
   - Request Body: `{ "user_question": <question_text> }`
   - Response: `{
     "question": "<question_text>",
