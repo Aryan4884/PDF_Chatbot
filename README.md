@@ -69,4 +69,5 @@ Welcome to the QueryPDF! This project aims to create a full-stack application th
 
 ## Demo
 
-A live demo of the application can be accessed [https://query-pdf-swart.vercel.app/](<demo_link>).
+- A live demo of the application can be accessed at [https://query-pdf-swart.vercel.app/](<demo_link>).
+- [Demo video](https://drive.google.com/file/d/1cRrsra0ZI9CyVeXKg8GaSyEW5ZdHPjol/view?usp=sharing).
