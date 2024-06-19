@@ -3,6 +3,9 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
+const BackendURL = import.meta.env.VITE_BACKEND_URL_KEY;
+console.log(BackendURL);
+
 export function ChatBox() {
     const [messages, setMessages] = useState([]);
     const [userQuestion, setUserQuestion] = useState('');
@@ -18,7 +21,7 @@ export function ChatBox() {
         setUserQuestion('');
 
         try {
-            const response = await axios.post('https://querypdf.onrender.com/ask_question/', {
+            const response = await axios.post(`${BackendURL}/ask_question/`, {
                 user_question: userQuestion,
             });
 
