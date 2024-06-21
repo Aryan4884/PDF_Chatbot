@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const BackendURL = import.meta.env.VITE_BACKEND_URL_KEY;
 console.log(BackendURL);
@@ -51,7 +51,14 @@ export function ChatBox() {
                         {message.type === 'user' && <FontAwesomeIcon icon={faUser} className="text-2xl ml-2 pt-2" />}
                     </div>
                 ))}
-                {loading && <div className="flex justify-start"><div className="p-2 bg-gray-300 rounded-lg">Loading...</div></div>}
+                {loading && (
+          <div className="flex justify-start">
+            <div className="p-3 bg-gray-300 rounded-lg flex items-center">
+              <FontAwesomeIcon icon={faSpinner} spin className="mr-2" />
+              Loading...
+            </div>
+          </div>
+        )}
             </div>
             <form onSubmit={handleQuestionSubmit} className="flex items-center bg-white rounded-lg shadow-md">
                 <input
