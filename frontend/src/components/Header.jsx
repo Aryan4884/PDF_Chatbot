@@ -37,8 +37,8 @@ export function Header() {
 
     return (
         <div className="flex justify-between shadow bg-white mb-2 items-center p-4 fixed w-full">
-            <div className="m-2">
-                <img src="./logo.svg" alt="Icon" />
+            <div className="m-2 flex items-center">
+                <img src="./icon.svg" alt="Icon" className="text-2xl mr-2" /><span className='tracking-tighter font-bold text-2xl'>QueryPDF</span>
             </div>
             <div {...getRootProps()} className="flex items-center">
                 <input {...getInputProps()} aria-label="Upload PDF" className="hidden" />
