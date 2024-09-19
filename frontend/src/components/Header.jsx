@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useDropzone } from 'react-dropzone';
 import { Button } from './Button';
 
-const BackendURL = import.meta.env.VITE_BACKEND_URL_KEY;
 
 export function Header() {
     const [uploadedFileName, setUploadedFileName] = useState('');
@@ -18,7 +17,7 @@ export function Header() {
         setError('');
         
         try {
-            await axios.post(`${BackendURL}/upload_pdf/`, formData, {
+            await axios.post('https://querypdf.onrender.com/upload_pdf/', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
