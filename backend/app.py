@@ -24,3 +24,7 @@ app.add_middleware(
 app.include_router(upload_pdf_router)
 app.include_router(ask_question_router)
 app.include_router(history_router)
+
+@app.get('/api/ping')
+async def ping():
+    return {'message': 'pong'}
