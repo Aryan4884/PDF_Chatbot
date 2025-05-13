@@ -43,7 +43,7 @@ export function ChatBox() {
                 {messages.map((message, index) => (
                     <div key={index} className={`flex items-start mb-2 ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
                         {message.type === 'bot' && <img src="./icon.svg" alt="Icon" className="text-2xl mr-2" />}
-                        <div className={`p-2 rounded-lg ${message.type === 'user' ? 'bg-blue-500 text-white' : 'bg-green-500 text-white'} w-3/4 sm:w-1/2 lg:w-3/4`}>
+                        <div className={`p-2 rounded-lg ${message.type === 'user' ? 'bg-pink-500 text-white' : 'bg-violet-400 text-white'} w-3/4 sm:w-1/2 lg:w-3/4`}>
                             {message.text}
                         </div>
                         {message.type === 'user' && <FontAwesomeIcon icon={faUser} className="text-2xl ml-2 pt-2" />}

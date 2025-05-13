@@ -5,15 +5,12 @@ import KeepAlive from './components/KeepAlive';
 
 function App() {
   return (
-    <div className="App flex flex-col min-h-screen items-center">
+    <div className="App flex flex-col min-h-screen items-center bg-green-100">
       <KeepAlive />
       <Header />
       <ChatBox />
-      <p className='w-3/4 mt-4 text-center text-gray-500'>
-        Please note: This web app is hosted on a free instance that may spin down due to inactivity. As a result, your first request after a period of inactivity may experience a delay of 50 seconds or more as the instance spins up. We appreciate your patience.
-      </p>
-      <p className='text-sm mt-2 text-gray-500'>
-        Made by <a href="https://jaimingodhani.me" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Jaimin Godhani</a>
+      <p className='text-sm mt-2 text-gray-500 mb-10'>
+        Made by <a href="https://heroic-begonia-be98f4.netlify.app" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Aryan Raj</a>
       </p>
     </div>
   );
