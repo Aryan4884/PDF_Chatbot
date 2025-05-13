@@ -9,7 +9,7 @@ app = FastAPI()
 # Define your updated CORS settings
 origins = [
     "http://localhost:5173", 
-    "https://query-pdf-swart.vercel.app",
+    "https://pdf-chatbot-frontend-zeta.vercel.app",
 ]
 
 app.add_middleware(
