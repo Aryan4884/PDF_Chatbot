@@ -1,6 +1,7 @@
 from fastapi import APIRouter, File, UploadFile, HTTPException
 from utils import get_pdf_text, get_text_chunks, get_vector_store
 import shutil
+import traceback
 import os
 
 router = APIRouter()
@@ -29,11 +30,11 @@ async def upload_pdf(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=f"Error saving PDF: {e}")
 
     # Process the PDF
-    try:
-        raw_text = get_pdf_text(file_location)
-        text_chunks = get_text_chunks(raw_text)
-        get_vector_store(text_chunks)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error processing PDF: {e}")
-
+   try:
+    raw_text = get_pdf_text(file_location)
+    text_chunks = get_text_chunks(raw_text)
+    get_vector_store(text_chunks)
+except Exception as e:
+    traceback.print_exc()  # 👈 This prints full error to the Render logs
+    raise HTTPException(status_code=500, detail=f"Error processing PDF: {e}")
     return {"info": f"File '{file.filename}' uploaded and processed successfully"}
