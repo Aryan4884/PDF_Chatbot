@@ -18,7 +18,7 @@ export function Header() {
     setError('');
 
     try {
-      await axios.post('https://querypdf.onrender.com/upload_pdf/', formData, {
+      await axios.post('https://pdf-chatbot-backend-7vzc.onrender.com/upload_pdf/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

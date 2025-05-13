@@ -6,7 +6,7 @@ function KeepAlive() {
   useEffect(() => {
     const pingServer = async () => {
       try {
-        await fetch('https://querypdf.onrender.com/api/ping');
+        await fetch('https://pdf-chatbot-backend-7vzc.onrender.com/api/ping');
         console.log('Ping successful');
       } catch (error) {
         console.error('Ping failed:', error);

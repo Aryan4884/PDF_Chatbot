@@ -19,7 +19,7 @@ export function ChatBox() {
         setUserQuestion('');
 
         try {
-            const response = await axios.post('https://querypdf.onrender.com/ask_question/', {
+            const response = await axios.post('https://pdf-chatbot-backend-7vzc.onrender.com/ask_question/', {
                 user_question: userQuestion,
             });
 
