@@ -1,73 +1,65 @@
-# QueryPDF
+# 📄 PDF Chatbot
 
-Welcome to the QueryPDF! This project aims to create a full-stack application that allows users to upload PDF documents, ask questions about their content, and receive answers generated through natural language processing. Below are the setup instructions, API documentation, and an overview of the application architecture.
+**PDF Chatbot** is a full-stack AI-powered application that lets users upload PDF documents and interact with them through natural language questions. Using advanced NLP models, it provides accurate, contextual answers drawn directly from the document content.
 
-## Setup Instructions
+---
 
-1. **Backend Setup**
-   - Clone the repository:
-     ```
-     git clone https://github.com/Jai0401/QueryPDF.git
-     ```
-   - Navigate to the backend directory:
-     ```
-     cd backend
-     ```
-   - Install dependencies:
-     ```
-     pip install -r requirements.txt
-     ```
-   - Create a new file named .env in the backend directory
-   - Start the FastAPI server:
-     ```
-     uvicorn app:app --reload
-     ```
+## 🚀 Features
 
-2. **Frontend Setup**
-   - Navigate to the frontend directory:
-     ```
-     cd frontend
-     ```
-   - Install dependencies:
-     ```
-     npm install
-     ```
-   - Start the React development server:
-     ```
-     npm run dev
-     ```
+- Upload and parse PDF documents
+- Ask natural language questions about PDF content
+- Get intelligent, real-time answers
+- Clean, responsive UI using React & Tailwind CSS
+- Fast backend powered by FastAPI and LangChain
 
-## API Documentation
+---
 
-- **PDF Upload Endpoint**
-  - POST `/upload_pdf`
-  - Request Body: Form Data
-    - `file`: PDF file
-  - Response: `{
-    "info": "File <file-name> uploaded and processed successfully"
-}`
+## 🛠️ Setup Instructions
 
-- **Question-Answer Endpoint**
-  - POST `/ask_question`
-  - Request Body: `{ "user_question": <question_text> }`
-  - Response: `{
-    "question": "<question_text>",
-    "answer": "<answer_text>"
-}`
+### 1. Clone the Repository
 
-## Application Architecture
+```bash
+git clone https://github.com/Jai0401/QueryPDF.git
+cd QueryPDF
+```
+2. Backend Setup (FastAPI)
+```bash
+cd backend
+pip install -r requirements.txt
+```
+Create a .env file in the backend directory with required variables (e.g., API keys if needed).
 
-- **Backend (FastAPI)**
-  - Handles PDF uploads, question processing, and answer generation.
-  - Utilizes LangChain for natural language processing.
-  - [Backend Architecture and Workflow Overview](backend/README.md#Backend-Architecture-and-Workflow-Overview)
+Start the development server:
+```bash
+uvicorn app:app --reload
+```
+3. Frontend Setup (React.js)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Visit http://localhost:3000 in your browser.
 
-- **Frontend (React.js)**
-  - Provides interfaces for PDF upload and asking questions.
-  - Displays answers and allows for follow-up or new questions on uploaded documents.
-  - Implements feedback mechanisms and error handling for user interactions.
 
-## Demo
+🧱 Application Architecture
+🖥 Backend (FastAPI + LangChain)
+Parses and indexes uploaded PDFs
 
-- A live demo of the application can be accessed at [https://query-pdf-swart.vercel.app/](<demo_link>).
-- [Demo video](https://drive.google.com/file/d/1cRrsra0ZI9CyVeXKg8GaSyEW5ZdHPjol/view?usp=sharing).
+Handles semantic search and question-answering
+
+REST API interface
+
+🌐 Frontend (React + Tailwind CSS)
+File uploader and chatbot UI
+
+Axios-powered API communication
+
+Handles chat history, loading states, and error feedback
+
+🔗 Try the App
+🎥 Watch Demo Video
+
+🤝 Contributing
+Want to make PDF Chatbot even better?
+You're welcome to open issues, suggest features, or submit pull requests.
